@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Table</title>
+  <link rel="stylesheet" href="style.css">
+    <style>
+    table{
+  margin-top: 100px;
+  text-align: center;
+  color: #fff;
+    width:50%;
+}
+
+#show th, #show td{
+  padding: 13px;
+}
+
+#btna td input{
+  width: 100%;
+}
+#p
+{
+text-align:center;
+}
+#body
+{
+background-color:#b3b3ff;
+}
+    </style>
+</head>
+<body id="body">
+<div id="p"> Detail Form<div>
+<hr>
+
+  <center>
+    <table >
+      <thead>
+        <tr>
+          <th> Name</th>
+          <td><input type="text" name="fname" id="fname"></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Mob No.</th>
+          <td><input type="text" name="lname" id="lname"></td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td><input type="text" name="email" id="email"></td>
+        </tr>
+                <tr>
+                </tr>
+           <tr>
+                </tr> <tr>
+                </tr> <tr>
+                </tr> <tr>
+                </tr> <tr>
+                </tr> <tr>
+                </tr>
+        <tr id="btna">
+          <td colspan="2"><input type="button" name="button" id="btn" value="Add" onclick="AddRow()"></td>
+        </tr>
+      </tbody>
+    </table>
+        
+        <hr>
+
+    <table  id="show">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Mob No.</th>
+          <th>Email ID</th>
+        </tr>
+      </thead>
+    </table>
+  </center>
+  
+  <script>
+    
+    var list1 = [];
+    var list2 = [];
+    var list3 = [];
+
+    var n = 1;
+    var x = 0;
+
+    function AddRow(){
+
+      var AddRown = document.getElementById('show');
+      var NewRow = AddRown.insertRow(n);
+
+      list1[x] = document.getElementById("fname").value;
+      list2[x] = document.getElementById("lname").value;
+      list3[x] = document.getElementById("email").value;
+
+      var cel1 = NewRow.insertCell(0);
+      var cel2 = NewRow.insertCell(1);
+      var cel3 = NewRow.insertCell(2);
+
+      cel1.innerHTML = list1[x];
+      cel2.innerHTML = list2[x];
+      cel3.innerHTML = list3[x];
+
+      n++;
+      x++;
+    }
+ var table=document.getElementById("table");
+    var i=0;
+      function func(){
+        i=i+1;
+        document.getElementById("tr").style.visibility="visible";
+        var name=document.getElementById("name").value;
+        var phone=document.getElementById("phone").value;
+        var mail=document.getElementById("mail").value;
+        // var table=document.getElementById("table");
+        var tr=document.createElement("tr");
+        tr.setAttribute("id", "c"+i);
+        var td1=document.createElement("td");
+        var td2=document.createElement("td");
+        var td3=document.createElement("td");
+        var del=document.createElement("button");
+        del.setAttribute("id", "c"+i);
+        del.setAttribute("onclick","func1(this.id)");
+        td1.value=name;
+        td2.value=phone;
+        td3.value=mail;
+        del.value="Delete";
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(del);
+        table.appendChild(tr);
+        var b=document.getElementsByTagName("button");
+        var x=document.getElementsByTagName("tr");
+      
+      }
+      
+  </script>
+</body>
+</html>
